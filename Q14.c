@@ -13,10 +13,16 @@ void main()
     sumOddNum = 0;
 
     
-    for (int i = 1; i <= (num/2); i++)
+    for (int i = 1; i <= num; i++)
     {
-            sumEvenNum += 2*i;
-            sumOddNum += 2*i - 1; 
+        if (i%2 == 0)
+        {
+            sumEvenNum += i;
+        }
+        else{
+            sumOddNum += i;
+        }
+        
     }
 
     printf("The sum of even number is %d\n",sumEvenNum);

@@ -5,7 +5,7 @@
 
 void main()
 {
-    int binaryNumber, decimalNumber, convertToBinaryNum, convertToDecimalNum, count, checkBinary;
+    int binaryNumber, decimalNumber, convertToBinaryNum, convertToDecimalNum, count, checkBinary, digit;
 
     printf("Enter the decimal number ");
     scanf("%d",&decimalNumber);
@@ -19,8 +19,9 @@ void main()
 
     for (int i = 0;checkBinary > 0; i++)
     {
-        checkBinary %= 10;
-        convertToDecimalNum += pow(2,count)*checkBinary;
+        digit = checkBinary%10;
+        convertToDecimalNum += pow(2,count)*digit;
+        checkBinary /= 10;
         count = ++count;
     }
     
