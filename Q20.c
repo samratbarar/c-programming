@@ -41,6 +41,6 @@ void main()
         base *= 10;
     }
         
-    printf("The Conversion of entered decimal into binary is %d\n",convertToBinaryNum);
-    printf("The Conversion of entered binary into decimal is %d",convertToDecimalNum);
+    printf("The Conversion of decimal form of %d into binary form is %d\n",decimalNumber,convertToBinaryNum);
+    printf("The Conversion of binary form of %d into decimal form is %d",binaryNumber,convertToDecimalNum);
 }
