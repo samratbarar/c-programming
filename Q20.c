@@ -5,13 +5,15 @@
 
 void main()
 {
-    int binaryNumber, decimalNumber, convertToBinaryNum, convertToDecimalNum, count, checkBinary, digit;
+    int binaryNumber, decimalNumber, convertToBinaryNum, convertToDecimalNum, count, checkBinary, digit, checkDecimal, base, rem;
 
     printf("Enter the decimal number ");
     scanf("%d",&decimalNumber);
 
     printf("Enter the binary number ");
     scanf("%d",&binaryNumber);
+
+    // convert to decimal number
 
     count = 0;
     checkBinary = binaryNumber;
@@ -24,7 +26,21 @@ void main()
         checkBinary /= 10;
         count = ++count;
     }
-    
-    // printf("The Conversion of entered decimal into binary is %d\n",convertToBinaryNum);
+
+    // convert to binary number
+
+    convertToBinaryNum = 0;
+    checkDecimal = decimalNumber;
+    base = 1;
+
+    for (int i = 0; checkDecimal > 0; i++)
+    {
+        rem = checkDecimal % 2;
+        convertToBinaryNum += rem * base;
+        checkDecimal /= 2;
+        base *= 10;
+    }
+        
+    printf("The Conversion of entered decimal into binary is %d\n",convertToBinaryNum);
     printf("The Conversion of entered binary into decimal is %d",convertToDecimalNum);
 }
