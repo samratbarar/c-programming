@@ -5,7 +5,7 @@
 
 void main()
 {
-    int sum, checkNum, digit, count, checkCount, num;
+    int sum, checkNum, digit, countDigit, num;
     
     printf("Enter the number : ");
     scanf("%d", &num);
@@ -15,19 +15,20 @@ void main()
     for (int i = 1; i <= num; i++)
     {
         checkNum = i;
-        checkCount = i;
-        count = 0;
+        countDigit = 0;
 
-        for (int k = 0; checkCount > 0; k++)
+        while(checkNum > 0)
         {
-            checkCount /= 10;
-            count = ++count;
+            checkNum /= 10;
+            countDigit = ++countDigit;
         }
 
-        for (int j = 0; checkNum > 0; j++)
+        checkNum = i;
+
+        while(checkNum > 0)
         {
             digit = checkNum % 10;
-            sum += pow(digit,count);
+            sum += pow(digit,countDigit);
             checkNum /= 10;
         }
         
