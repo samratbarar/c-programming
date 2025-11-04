@@ -7,17 +7,19 @@ Swap these two elements and print array.
 
 void main()
 {
-    int n, i, largest, secondLargest, indexOfLargest, indexOfsecondLargest, temp;
+    int num, i, largest, secondLargest, indexOfLargest, indexOfSecondLargest, temp;
 
     printf("Enter the number of elements : ");
-    scanf("%d",&n);
+    scanf("%d",&num);
 
-    int Array[n];
+    int Array[num];
 
     largest = INT_MIN;
     secondLargest = INT_MIN;
 
-    for ( i = 0; i < n; i++)
+    printf("Enter the elements : \n");
+
+    for ( i = 0; i < num; i++)
     {
         printf("A[%d] : ",i);
         scanf("%d",&Array[i]);
@@ -29,12 +31,12 @@ void main()
         }
     }
 
-    for ( i = 0; i < n; i++)
+    for ( i = 0; i < num; i++)
     {
         if (secondLargest < Array[i] && Array[i] != largest)
         {
             secondLargest = Array[i];
-            indexOfsecondLargest = i;
+            indexOfSecondLargest = i;
         }
         
     }
@@ -42,11 +44,11 @@ void main()
     printf("Largest = %d and second largest = %d \n",largest, secondLargest);
 
     temp = Array[indexOfLargest];
-    Array[indexOfLargest] = Array[indexOfsecondLargest];
-    Array[indexOfsecondLargest] = temp;
+    Array[indexOfLargest] = Array[indexOfSecondLargest];
+    Array[indexOfSecondLargest] = temp;
 
-    for ( i = 0; i < n; i++)
+    for ( i = 0; i < num; i++)
     {
-        printf("A[%d] = %d \n",i, Array[i]);
+        printf("A[%d] : %d \n",i, Array[i]);
     }  
 }
