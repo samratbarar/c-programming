@@ -4,18 +4,18 @@
 
 void main()
 {
-    int size, i, j, current;
+    int length, i, j, current;
 
     printf("Enter the number of elements : ");
-    scanf("%d", &size);
+    scanf("%d", &length);
 
-    int array[size];
+    int array[length];
 
     printf("Enter elements : \n");
 
     // taking input for array
 
-    for (i = 0; i < size; i++)
+    for (i = 0; i < length; i++)
     {
         printf("A[%d] : ", i);
         scanf("%d", &array[i]);
@@ -26,7 +26,7 @@ void main()
     Taking first element in sorted part and remaining all elements in unsorted part.
     */
 
-    for ( i = 1; i <= size; i++)
+    for ( i = 1; i <= length; i++)
     {
         current = array[i];
         for ( j = i-1; j>=0 && current < array[j]; j--)
@@ -43,7 +43,7 @@ void main()
 
     printf("Printing sorted array\n");
 
-    for ( i = 0; i < size; i++)
+    for ( i = 0; i < length; i++)
     {
         printf("A[%d] = %d\n",i,array[i]);
     }

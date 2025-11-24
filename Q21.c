@@ -6,11 +6,13 @@ void main()
 {
     int num, sum; 
 
+    // Taking size of the array 
     printf("Enter the number of elements : ");
     scanf("%d",&num);
 
     int Array[num];
 
+    // Taking input array and adding the elements of the array.
     sum = 0;
 
     printf("Enter the elements : \n");
@@ -23,5 +25,6 @@ void main()
         sum += Array[i];
     }
 
+    // Printing the sum of the array elements.
     printf("The sum of array elements is %d ",sum);
 }
