@@ -1,30 +1,26 @@
-// WAP that finds the sum of diagonal elements of an mxn matrix.
+// WAP that finds the sum of diagonal elements of an nxn matrix.
 
-# include <stdio.h>
+#include <stdio.h>
 
 void main()
 {
-    int i, j, row, column, sumOfDiagonalElements, sum;
+    int i, j, order, sum;
 
     // taking order of matrix
 
-    printf("Enter the number of rows of matrix : ");
-    scanf("%d",&row);
+    printf("Enter the order of matrix : ");
+    scanf("%d", &order);
 
-    printf("Enter the number of columns of matrix :");
-    scanf("%d",&column); 
-
-    int matrix[row][column];
+    int matrix[order][order];
 
     // taking matrix
 
-     for (i = 0; i < row; i++)
+    for (i = 0; i < order; i++)
     {
-        printf("Enter %d row of matrix\n",i+1);
+        printf("Enter %d row of matrix\n", i + 1);
 
-        for (j = 0; j < column; j++)
+        for (j = 0; j < order; j++)
         {
-
             scanf("%d", &matrix[i][j]);
         }
         printf("\n");
@@ -34,12 +30,18 @@ void main()
 
     sum = 0;
 
-    for ( i = 0; i < row && i < column; i++)
+    for (i = 0; i < order; i++)
     {
-        sum += matrix[i][i];
-    }  
+        for (j = 0; j < order; j++)
+        {
+            if ((i == j) || (i + j == order - 1))
+            {
+                sum += matrix[i][j];
+            }
+        }
+    }
 
-    // printing the sum of diagonal elements 
+    // printing the sum of diagonal elements
 
-    printf("The sum of the diagonal elements is %d",sum);
+    printf("The sum of the diagonal elements is %d", sum);
 }

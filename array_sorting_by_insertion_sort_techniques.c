@@ -26,7 +26,7 @@ void main()
     Taking first element in sorted part and remaining all elements in unsorted part.
     */
 
-    for ( i = 1; i <= length; i++)
+    for ( i = 1; i < length; i++)
     {
         current = array[i];
         for ( j = i-1; j>=0 && current < array[j]; j--)
